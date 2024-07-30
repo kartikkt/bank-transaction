@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: transaction
+
+
+audit:
+  batch-size: 1000
+  batch-capacity: 1000000
+
+transaction-producer:
+  amount-lower-limit: 20000
+  amount-upper-limit: 500000
