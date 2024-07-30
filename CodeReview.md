@@ -56,10 +56,9 @@ Code Review Submission
 5. To help with immutability we can make input as final. 
 6. Returning `-1F` for non-existing accounts might not be intuitive. Returning throwing an exception might be clearer.
 7. For thread safety, normal `HashMap` might cause issue. Instead using `ConcurrentHashMap` or synchronizing access to the map would be helpful. 
-8. The map is accessed twice when updating the balance (`get` and `put`). This can be optimized to a single `compute` operation.
-9. Proper tests also need to be put in place to test each line and their functionality properly.
-10. `map.merge` can be used to update the balance, which reduces the number of map accesses and is thread-safe.
-11. Appropriate Exception handling is also needed, either in the service or calling function or in a global handler.
+8. The map is accessed twice when updating the balance (`get` and `put`). This can be optimized to a single `compute` operation using `map.merge`  to update the balance, which reduces the number of map accesses and is thread-safe.
+9. Proper tests also need to be put in place to test each line and their functionality properly. 
+10. Appropriate Exception handling is also needed, either in the service or calling function or in a global handler.
 
 ### **Suggested Implementation**
 
